@@ -1,0 +1,17 @@
+{
+  "name": "create-magic-link",
+  "version": "1.0.0",
+  "description": "Lambda function to generate and send a magic login link via AWS SES",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.750.0",
+    "crypto-js": "^4.2.0",
+    "uuid": "^11.1.0",
+    "@aws-sdk/client-ssm": "^3.774.0"
+
+  }
+}

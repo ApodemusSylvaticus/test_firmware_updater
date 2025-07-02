@@ -1,0 +1,16 @@
+{
+  "name": "request-access",
+  "version": "1.0.0",
+  "description": "Lambda function for request access to cognito pull",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.775.0",
+    "@aws-sdk/client-ssm": "^3.775.0",
+    "node-fetch": "^3.3.2",
+    "validator": "^13.15.0"
+  }
+}

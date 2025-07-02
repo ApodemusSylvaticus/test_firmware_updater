@@ -1,0 +1,66 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+**/node_modules/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# === Terraform: /infra ===
+infra/.terraform/
+infra/terraform.tfstate
+infra/terraform.tfstate.*
+infra/*.tfplan
+infra/*.backup
+infra/crash.log
+
+infra/s3-bucket/.terraform/
+infra/s3-bucket/terraform.tfstate
+infra/s3-bucket/terraform.tfstate.*
+infra/s3-bucket/*.tfplan
+infra/s3-bucket/*.backup
+infra/s3-bucket/crash.log
+
+# === React app: /client ===
+client/node_modules/
+client/dist/
+client/build/
+client/.next/
+client/.turbo/
+client/.parcel-cache/
+client/.cache/
+client/coverage/
+client/public/build/
+
+# === Lambdas: /lambda ===
+lambda/**/node_modules/
+lambda/**/dist/
+lambda/**/.build/
+lambda/**/coverage/
+lambda/**/.tsbuildinfo
+lambda/**/package-lock.json
+
+lambdaZips
+
+# === Optionally ignore all yarn.lock or package-lock.json in subfolders ===
+lambda/**/yarn.lock
+lambda/**/pnpm-lock.yaml

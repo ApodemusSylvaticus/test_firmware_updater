@@ -1,0 +1,9 @@
+export const BASE_URL = import.meta.env.VITE_API_GATEWAY_DOMAIN;
+export const REFRESH_TOKEN_URL = `${BASE_URL}/refresh-token`;
+export const FIRMWARE_UPDATER_FULL_URL = `${BASE_URL}/firmware-updater-full`;
+export const FIRMWARE_UPDATER_ONLY_SETTINGS_URL = `${BASE_URL}/firmware-updater-only-settings`;
+export const FIRMWARE_UPDATER_ONLY_FIRMWARE_URL = `${BASE_URL}/firmware-updater-only-firmware`;
+export const START_AUTH_URL = `${BASE_URL}/start-auth`;
+export const START_VERIFY_URL = `${BASE_URL}/start-verify`;
+export const REQUEST_FOR_ACCESS = `${BASE_URL}/request-for-access`;
+export const FIRMWARE_LIST = `${BASE_URL}/firmware-list`;

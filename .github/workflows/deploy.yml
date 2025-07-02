@@ -1,0 +1,67 @@
+name: "Full Deploy: Terraform + Client"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_REGION: eu-central-1
+      TF_VAR_email_sender: ${{ secrets.EMAIL_SENDER }}
+      TF_VAR_email_recipient: ${{ secrets.EMAIL_RECIPIENT }}
+      TF_VAR_mode: 'prod'
+      TF_VAR_recaptcha_secret_key: ${{secrets.RECAPTCHA_SECRET_KEY}}
+      TF_VAR_github_access_token: ${{secrets.ACCESS_TOKEN_GITHUB}}
+
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.11.3
+
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Install deps for zips
+        run: npm install
+
+      - name: Run Makefile full-deploy
+        run: make full-deploy
+
+      - name: Extract Amplify App ID
+        id: get_amplify_outputs
+        run: |
+          echo "APP_ID=$(terraform -chdir=infra output -raw amplify_app_id)" >> $GITHUB_ENV
+
+      - name: Install client deps
+        run: npm i --legacy-peer-deps
+        working-directory: client
+
+      - name: Build client
+        run: npm run build
+        working-directory: client
+
+      - name: Trigger Amplify build manually
+        run: |
+          aws amplify start-job \
+            --app-id "$APP_ID" \
+            --branch-name main \
+            --job-type RELEASE

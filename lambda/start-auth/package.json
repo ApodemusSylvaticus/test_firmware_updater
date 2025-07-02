@@ -1,0 +1,15 @@
+{
+  "name": "start-auth",
+  "version": "1.0.0",
+  "description": "Lambda function to start authentication via Cognito and store the challenge state in DynamoDB",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.750.0",
+    "@aws-sdk/client-dynamodb": "^3.751.0",
+    "@aws-sdk/client-ssm": "^3.774.0"
+  }
+}

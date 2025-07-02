@@ -1,0 +1,14 @@
+{
+  "name": "refresh-tokens",
+  "version": "1.0.0",
+  "description": "Lambda function to refresh Cognito tokens using a provided refresh token",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.775.0",
+    "@aws-sdk/client-ssm": "^3.775.0"
+  }
+}
