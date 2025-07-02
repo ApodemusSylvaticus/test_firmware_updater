@@ -32,7 +32,7 @@ resource "aws_s3_bucket" "lambda_storage" {
 
 
 resource "aws_s3_bucket" "firmware_temporary_storage" {
-  bucket = "archer-firmware-temporary-storage"
+  bucket = "archer-firmware-temporary-storage-test"
 
 }
 
