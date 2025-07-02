@@ -89,4 +89,4 @@
    In API Gateway (`archer-api`), click **Deploy API** → **stage: prod**.
 8. Set all firmware file to s3/archer-firmware-storage
 
-----------_____
+----------_____сс
