@@ -30,7 +30,7 @@ locals {
 }
 
 data "aws_s3_bucket" "archer_lambda_storage_s3" {
-  bucket = "archer-lambda-storage"
+  bucket = "archer-lambda-storage-test"
 }
 
 resource "aws_dynamodb_table" "magic_link" {
