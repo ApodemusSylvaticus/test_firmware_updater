@@ -3,7 +3,7 @@ LAMBDA_DIR = ./lambda
 DIST_DIR   = ./lambdaZips
 
 # S3 bucket name
-BUCKET_NAME = archer-lambda-storage
+BUCKET_NAME = archer-lambda-storage-test
 
 # Lambda function folders
 LAMBDA_NAMES = firmware-updater-full \
