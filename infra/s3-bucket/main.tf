@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "archer-firmware-updater-terraform-state-test"
+    bucket = "archer-firmware-updater-terraform-state-test2"
     key    = "envs/s3/terraform.tfstate"
     region = "eu-central-1"
     encrypt = true
