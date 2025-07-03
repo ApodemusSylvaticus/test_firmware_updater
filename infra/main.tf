@@ -8,7 +8,7 @@ terraform {
 
 
   backend "s3" {
-    bucket = "archer-firmware-updater-terraform-state-test2"
+    bucket = "archer-firmware-updater-terraform-state"
     key    = "envs/main/terraform.tfstate"
     region = "eu-central-1"
     encrypt = true
@@ -30,7 +30,7 @@ locals {
 }
 
 data "aws_s3_bucket" "archer_lambda_storage_s3" {
-  bucket = "archer-lambda-storage-test"
+  bucket = "archer-lambda-storage"
 }
 
 resource "aws_dynamodb_table" "magic_link" {

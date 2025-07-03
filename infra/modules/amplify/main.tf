@@ -42,7 +42,7 @@ locals {
 
 resource "aws_amplify_app" "client" {
   name                 = "firmware_updater"
-  repository           = "https://github.com/ApodemusSylvaticus/test_firmware_updater"
+  repository           = "https://github.com/tortorino/test_firmware_updater"
   iam_service_role_arn = aws_iam_role.amplify_service_role.arn
   access_token          = var.access_token
   build_spec            = local.buildspec_content

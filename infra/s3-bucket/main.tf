@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "archer-firmware-updater-terraform-state-test2"
+    bucket = "archer-firmware-updater-terraform-state"
     key    = "envs/s3/terraform.tfstate"
     region = "eu-central-1"
     encrypt = true
@@ -21,18 +21,18 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "firmware_storage" {
-  bucket = "archer-firmware-storage-test"
+  bucket = "archer-firmware-storage"
 }
 
 resource "aws_s3_bucket" "lambda_storage" {
-  bucket = "archer-lambda-storage-test"
+  bucket = "archer-lambda-storage"
   force_destroy = true
 
 }
 
 
 resource "aws_s3_bucket" "firmware_temporary_storage" {
-  bucket = "archer-firmware-temporary-storage-test"
+  bucket = "archer-firmware-temporary-storage"
 
 }
 
