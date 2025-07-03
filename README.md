@@ -90,3 +90,4 @@
 8. Set all firmware file to s3/archer-firmware-storage
 
 ----------_____сс
+йй
